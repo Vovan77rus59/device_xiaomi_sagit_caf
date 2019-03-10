@@ -21,9 +21,16 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from sagit device
 $(call inherit-product, device/xiaomi/sagit/device.mk)
 
-$(call inherit-product, vendor/nitrogen/products/common.mk)
+# Inherit some common Lineage stuff.
+$(call inherit-product, vendor/aosp/config/common.mk)
 
-PRODUCT_NAME := nitrogen_sagit
+CUSTOM_BUILD_TYPE := OFFICIAL
+TARGET_GAPPS_ARCH := arm64
+TARGET_BOOT_ANIMATION_RES := 1080
+KBUILD_BUILD_USER := verevka
+KBUILD_BUILD_HOST := sagit
+
+PRODUCT_NAME := aosp_sagit
 PRODUCT_DEVICE := sagit
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := MI 6
@@ -35,9 +42,3 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     PRIVATE_BUILD_DESC="sagit-user 8.0.0 OPR1.170623.027 V9.2.3.0.OCAMIEK release-keys"
 
 BUILD_FINGERPRINT := Xiaomi/sagit/sagit:8.0.0/OPR1.170623.027/V9.2.3.0.OCAMIEK:user/release-keys
-
-# Bootanimation
-TARGET_SCREEN_WIDTH := 1080
-
-PRODUCT_PACKAGES += \
-    messaging
