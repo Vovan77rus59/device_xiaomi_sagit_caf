@@ -165,4 +165,7 @@
 
     <!-- Whether auto face unlock is enabled by default -->
     <bool name="config_autoFaceUnlockEnabledByDefault">true</bool>
+
+    <!-- Whether to enable smart clock feature -->
+    <bool name="config_enableSmartClock">true</bool>
 </resources>
